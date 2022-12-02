@@ -21,7 +21,7 @@ const Navbar = () => {
     <header className="bg-black backdrop-blur-lg py-4 px-4 md:px-8  sticky top-0 left-0 right-0">
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         <Link href="/" className="text-white text-lg font-medium">
-          Giz
+          Gigz
         </Link>
         <form className="flex-1 flex justify-center">
           <div className="max-w-xl w-full mx-auto relative isolate">
@@ -36,7 +36,24 @@ const Navbar = () => {
         </form>
 
         <div className="flex items-center">
-          {!session ? <Link href="/sign-in" className="text-white bg-yellow-400 rounded-full px-6 w-fit py-1">Sign In</Link> : ""}
+          {!session ? (
+            <>
+              <Link
+                href="/sign-in"
+                className="text-white bg-yellow-400 rounded-full px-6 w-fit py-1"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/sign-up"
+                className="text-white ml-3 bg-green-400 rounded-full px-6 w-fit py-1"
+              >
+                Sign Up
+              </Link>
+            </>
+          ) : (
+            ""
+          )}
         </div>
       </nav>
     </header>

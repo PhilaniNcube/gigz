@@ -6,7 +6,7 @@ export type Json =
   | { [key: string]: Json }
   | Json[]
 
-  type ImageObject = {
+  export type ImageObject = {
     url: string
     width: number
     height: number
