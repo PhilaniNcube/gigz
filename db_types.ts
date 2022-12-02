@@ -117,6 +117,7 @@ export type Json =
           tags: {
             tags:string[]
           }
+          profile: Profile
           }
           Update: {
           id: string
@@ -136,6 +137,7 @@ export type Json =
           tags?: {
             tags:string[]
           }
+          profile?: string
           }
           Insert : {
              id: string
@@ -155,6 +157,7 @@ export type Json =
           tags?: {
             tags:string[]
           }
+          profile?: string
           }
          }
          comments: {
