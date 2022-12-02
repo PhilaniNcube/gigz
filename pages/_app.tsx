@@ -28,15 +28,6 @@ function MyApp({
     >
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <button
-            onClick={async () => {
-              await supabaseClient.auth.signOut();
-              router.push("/");
-            }}
-          >
-            Logout
-          </button>
-
           <Component {...pageProps} />
         </Hydrate>
       </QueryClientProvider>
