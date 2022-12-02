@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Database } from "../db_types";
 import "../styles/globals.css";
 import { Hydrate, QueryClient, QueryClientProvider,DehydratedState } from "@tanstack/react-query";
+import Navbar from "../components/shared/Navbar";
 
 function MyApp({
   Component,
@@ -28,6 +29,7 @@ function MyApp({
     >
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
+          <Navbar />
           <Component {...pageProps} />
         </Hydrate>
       </QueryClientProvider>
