@@ -4,11 +4,14 @@ import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
 import React from 'react'
 import { useSessionContext, useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import { Database } from '../../db_types';
+import DropdownMenu from './DropdownMenu';
 
 const Navbar = () => {
 
     const { isLoading, session, error } = useSessionContext();
     const user = useUser();
+
+    console.log(user)
     const supabaseClient = useSupabaseClient<Database>();
 
   const router = useRouter();
@@ -18,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-black backdrop-blur-lg py-4 px-4 md:px-8  sticky top-0 left-0 right-0">
+    <header className="bg-transparent backdrop-blur-lg py-4 px-4 md:px-8 fixed top-0 left-0 right-0">
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         <Link href="/" className="text-white text-lg font-medium">
           Gigz
@@ -52,7 +55,7 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-            ""
+           <DropdownMenu />
           )}
         </div>
       </nav>
